@@ -1,0 +1,8 @@
+# metrics-etcd.yml
+# ref.: https://docs.siderolabs.com/kubernetes-guides/monitoring-and-observability/etcd-metrics
+# These patch exposes etcd metric to make Prometheus collector able to scrap.
+# By default metrics are exposed on 127.0.0.1 and could not be scrapped by Prometheus.
+cluster:
+  etcd:
+    extraArgs:
+      listen-metrics-urls: http://0.0.0.0:2381

@@ -1,0 +1,10 @@
+# ephemeral.yml
+# ref.: https://docs.siderolabs.com/talos/v1.13/configure-your-talos-cluster/storage-and-disk-management/disk-management/system#ephemeral-volume
+# This patch limits EPHEMERAL volume to 100GB preventing extension to all free space.
+apiVersion: v1alpha1
+kind: VolumeConfig
+name: EPHEMERAL
+provisioning:
+  minSize: 10GB
+  maxSize: 100GB
+  grow: true

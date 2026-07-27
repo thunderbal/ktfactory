@@ -1,0 +1,10 @@
+# node-patch.yml
+# 'node' specific patch
+# replace node by hostname of target node
+machine:
+  install:
+    disk: /dev/sdc
+  network:
+    interfaces:
+      - interface: enp0s1
+        dhcp: tru

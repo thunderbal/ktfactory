@@ -1,0 +1,12 @@
+# dual-stack-ipv4-ipv6.yml
+# ref.: https://docs.siderolabs.com/talos/v1.13/configure-your-talos-cluster/system-configuration/patching#cluster-network
+# This patch configures Pod and Services subnets CIDRs
+# This patch must be applied before joining a Kubernetes cluster
+cluster:
+  network:
+    podSubnets:
+      - 10.244.0.0/16
+      - fd01::/64
+    serviceSubnets:
+      - 10.96.0.0/12
+      - fd00::/112

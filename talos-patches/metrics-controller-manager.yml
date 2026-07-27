@@ -1,0 +1,8 @@
+# metrics-controller-manager.yml
+# ref.: 
+# These patch exposes Controller Manager metric to make Prometheus collector able to scrap.
+# By default metrics are exposed on 127.0.0.1 and could not be scrapped by Prometheus.
+cluster:
+  controllerManager:
+    extraArgs:
+      bind-address: "0.0.0.0"

@@ -1,0 +1,6 @@
+# schedule-on-controlers.yml
+# ref.: 
+# This patch permits to deploy worload on Kubernetes controllers.
+# It is required for single node cluster.
+apiVersion: v1alpha1cluster:
+    allowSchedulingOnControlPlanes: true

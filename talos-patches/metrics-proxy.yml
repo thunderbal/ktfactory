@@ -1,0 +1,11 @@
+# metrics-proxy.yml
+# ref.: 
+# These patch exposes Kube Proxy metric to make Prometheus collector able to scrap.
+# By default metrics are exposed on 127.0.0.1 and could not be scrapped by Prometheus.
+#
+# This settings is not applied dynamicaly
+# run: talosctl upgrade-k8S --to <current version>
+cluster:
+  proxy:
+    extraArgs:
+      metrics-bind-address: "0.0.0.0:10249"
