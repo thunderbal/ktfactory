@@ -30,7 +30,7 @@ copy ../../talos-patches/node-patch ./patches/ctrl01.patch.yml # update target d
 # Generate full Talos machine configuration for our ctrl01 controler
 make cp-node HOST=ctrl01
 # Boot ctrlk01 from Talos Linux ISO image and Apply machine configuration
-talosctl apply-config controlplane-ctrl01.yaml --nodes ctrl01 --insecure
+talosctl apply-config --file ctl-ctrl01.yaml --nodes ctrl01 --insecure
 # Wait for etcd to be ready for bootstrap...
 talosctl bootstrap --nodes ctrl01 --talosconfig gen-talosconfig
 
