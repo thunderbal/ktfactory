@@ -2,5 +2,5 @@
 # ref.: https://docs.siderolabs.com/talos/v1.13/deploy-and-manage-workloads/workloads-on-controlplane#enable-workloads-on-your-control-plane-nodes
 # This patch permits to deploy worload on Kubernetes controllers.
 # It is required for single node cluster.
-apiVersion: v1alpha1cluster:
-    allowSchedulingOnControlPlanes: true
+cluster:
+  allowSchedulingOnControlPlanes: true
