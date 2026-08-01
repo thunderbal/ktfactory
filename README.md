@@ -17,11 +17,11 @@ make new
 cd kube
 # The schedule on controlers patch is required on single node cluster
 # It should be run on controlers node only with 'ctl.' prefix
-copy ../../talos-patches/schedule-on-controlers.yml ./patches/ctl.schedule-on-controlers.yml
+copy ../../talos-patches/ctl-schedule-on-controlers.yml ./patches/
 # For Cilium CNI, default CNI must not be installed
 # Copy predefined patch and prefix its name by 'all.'
 # Tha way this patch will be applied on all nodes
-copy ../../talos-patches/no-cni.yml ./patches/all.no-cni.yml
+copy ../../talos-patches/all.no-cni.yml ./patches/
 # Identify target disk and network interface devices
 talosctl get disks --nodes ctrl01 --insecure
 talosctl get links --nodes ctrl01 --insecure
