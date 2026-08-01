@@ -1,5 +1,5 @@
 # no-cni.yml
-# ref.: 
+# ref.: https://docs.siderolabs.com/talos/v1.13/reference/configuration/v1alpha1/config#cni
 # These patch permits to bootstrap a cluster without CNI (by default: flannel).
 # A CNI must be installed after etcd bootstrap in order to make the cluster Ready.
 # This patch is required to deploy Cilium CNI or other CNI than Flannel.
@@ -7,5 +7,3 @@ cluster:
   network:
     cni:
       name: none
-  proxy:
-    disabled: true

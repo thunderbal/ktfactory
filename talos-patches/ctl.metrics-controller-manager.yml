@@ -1,5 +1,6 @@
 # metrics-controller-manager.yml
-# ref.: 
+# ref.: https://docs.siderolabs.com/talos/v1.13/reference/configuration/v1alpha1/config#controllermanager-2
+# ref.: https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/
 # These patch exposes Controller Manager metric to make Prometheus collector able to scrap.
 # By default metrics are exposed on 127.0.0.1 and could not be scrapped by Prometheus.
 cluster:

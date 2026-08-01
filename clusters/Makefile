@@ -3,19 +3,19 @@ export
 
 SHELL=/bin/bash
 
-.PHONY: config secrets cp-node wk-node controlplane worker talosconfig
+.PHONY: config secrets ctl-node wkr-node controlplane worker talosconfig
 config: talosconfig controlplane worker
 secrets: secrets.yaml
 talosconfig: gen-talosconfig
 controlplane: gen-controlplane.yaml
 worker: gen-worker.yaml
-cp-node: controlplane-$(HOST).yaml
-wk-node: worker-$(HOST).yaml
+ctl-node: ctl-$(HOST).yaml
+wkr-node: wkr-$(HOST).yaml
 
-wks-%.yaml: gen-worker.yaml
-	@talosctl machineconfig patch $< \
+wkr-%.yaml: gen-worker.yaml
+	talosctl machineconfig patch $< \
 		$(foreach f, $(wildcard patches/all.*.yml), --patch $(f)) \
-		$(foreach f, $(wildcard patches/wks.*.yml), --patch $(f)) \
+		$(foreach f, $(wildcard patches/wkr.*.yml), --patch $(f)) \
 		$(foreach f, $(wildcard patches/$*.*.yml), --patch $(f)) \
 		--output $@
 	# ===== $@: OK =====

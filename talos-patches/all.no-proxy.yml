@@ -1,0 +1,7 @@
+# no-proxy.yml
+# ref.: https://docs.siderolabs.com/talos/v1.13/reference/configuration/v1alpha1/config#proxy
+# These patch permits to bootstrap a cluster without kube-proxy when Cilium is configured
+# to replace proxy.
+cluster:
+  proxy:
+    disabled: true
