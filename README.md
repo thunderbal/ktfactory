@@ -28,7 +28,7 @@ talosctl get links --nodes ctrl01 --insecure
 copy ../../talos-patches/node-patch ./patches/ctrl01.patch.yml # update target disk and network interface within this copy
 
 # Generate full Talos machine configuration for our ctrl01 controler
-make cp-node HOST=ctrl01
+make ctl-node HOST=ctrl01
 # Boot ctrlk01 from Talos Linux ISO image and Apply machine configuration
 talosctl apply-config --file ctl-ctrl01.yaml --nodes ctrl01 --insecure
 # Wait for etcd to be ready for bootstrap...
